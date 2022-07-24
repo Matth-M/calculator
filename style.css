@@ -10,6 +10,10 @@ main {
 	border: 2px solid black;
 	border-radius: 5px;
 	padding: 5px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 ul#operands,
@@ -19,12 +23,28 @@ ul#numbers {
 	margin: 0;
 }
 
-.number{
-
-}
-
 .operand,
 #result,
 .number {
 	border: 2px solid black;
+	text-align: center;
+}
+
+#keys {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: 300px;
+
+}
+
+#numbers {
+	display: flex;
+	flex-wrap: wrap;
+	width: 200px;
+}
+
+.number {
+	width: 60px;
 }
