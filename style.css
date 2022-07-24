@@ -1,0 +1,30 @@
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	font-size: 40px;
+}
+
+main {
+	border: 2px solid black;
+	border-radius: 5px;
+	padding: 5px;
+}
+
+ul#operands,
+ul#numbers {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.number{
+
+}
+
+.operand,
+#result,
+.number {
+	border: 2px solid black;
+}
