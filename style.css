@@ -33,18 +33,33 @@ ul#numbers {
 #keys {
 	display: flex;
 	flex-direction: row;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: center;
-	width: 300px;
-
 }
 
 #numbers {
 	display: flex;
 	flex-wrap: wrap;
 	width: 200px;
+
+}
+
+#numbers,
+#operands {
+	gap: 3px;
 }
 
 .number {
 	width: 60px;
+}
+
+#result {
+	box-sizing: border-box;
+	margin: 0 0 30px;
+	width: 100%;
+}
+
+#operands {
+	display: flex;
+	flex-direction: column;
 }
