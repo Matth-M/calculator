@@ -1,9 +1,16 @@
+:root {
+	  --main-bg-color: #9f9fa0;
+  }
+
 body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
 	font-size: 40px;
+	margin: 0;
+	background-color: var(--main-bg-color);
+
 }
 
 main {
@@ -56,6 +63,7 @@ ul#numbers {
 #result {
 	box-sizing: border-box;
 	margin: 0 0 30px;
+	background-color: var(--main-bg-color);
 	width: 100%;
 }
 
