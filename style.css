@@ -43,6 +43,7 @@ ul#numbers {
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
+	column-gap: 10px;
 }
 
 #numbers {
@@ -71,4 +72,5 @@ ul#numbers {
 #operands {
 	display: flex;
 	flex-direction: column;
+	justify-content: space-between;
 }
