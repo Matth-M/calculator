@@ -8,7 +8,9 @@ numbers.forEach(number => {
 });
 
 function clear(){
-		resultContainer.textContent = 0;
+	resultContainer.textContent = result;
+	operator = null;
+	storedNb = 0;
 }
 const clearBtn = document.querySelector('#clear');
 clearBtn.addEventListener('click', clear);
