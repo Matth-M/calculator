@@ -12,17 +12,21 @@ function setOperation(operator){
 	clear();
 }
 
+function addClickHandler(element, operator) {
+    element.addEventListener('click', function() {
+		setCurrentOperation(operator);
+    }, false);
+}
+
 const addBtn = document.getElementById('add');
-addBtn.addEventListener('click', setOperation(add));
-
 const subBtn = document.getElementById('substract');
-subBtn.addEventListener('click', setOperation(substract));
-
 const mulBtn = document.getElementById('multiply');
-mulBtn.addEventListener('click', setOperation(multiply));
-
 const divBtn = document.getElementById('divide');
-divBtn.addEventListener('click', setOperation(divide));
+
+addClickHandler(addBtn, add);
+addClickHandler(subBtn , substract);
+addClickHandler(mulBtn, multiply);
+addClickHandler(divBtn, divide);
 
 const equalBtn = document.getElementById('equal');
 equalBtn.addEventListener('click', function(){
