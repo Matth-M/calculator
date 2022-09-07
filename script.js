@@ -30,7 +30,7 @@ addClickHandler(divBtn, divide);
 
 const equalBtn = document.getElementById('equal');
 equalBtn.addEventListener('click', function(){
-	const result = operate(operator, storedNb, +resultContainer.textContent);
+	const result = operate(context.operator, context.storedNb, +resultContainer.textContent);
 	resultContainer.textContent = result;
 	operator = null;
 	storedNb = 0;
