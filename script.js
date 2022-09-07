@@ -3,13 +3,13 @@ let context = {
 	storedNb: 0,
 }
 
-function setOperation(operator){
+function setCurrentOperation(operator){
 	if(context.operator != null){
 		resultContainer.textContent = operate(operator, context.storedNb, +resultContainer.textContent);
 	}
 	context.operator = operator;
 	context.storedNb = +resultContainer.textContent;
-	clear();
+	clearResultContainer();
 }
 
 function addClickHandler(element, operator) {
