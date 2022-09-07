@@ -32,6 +32,6 @@ const equalBtn = document.getElementById('equal');
 equalBtn.addEventListener('click', function(){
 	const result = operate(context.operator, context.storedNb, +resultContainer.textContent);
 	resultContainer.textContent = result;
-	operator = null;
-	storedNb = 0;
+	context.operator = null;
+	context.storedNb = 0;
 });
