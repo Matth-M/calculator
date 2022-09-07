@@ -7,10 +7,10 @@ numbers.forEach(number => {
 	});
 });
 
-function clear(){
-	resultContainer.textContent = result;
-	operator = null;
-	storedNb = 0;
+function reset(){
+	resultContainer.textContent = 0;
+	context.operator = null;
+	context.storedNb = 0;
 }
 const clearBtn = document.querySelector('#clear');
 clearBtn.addEventListener('click', clear);
