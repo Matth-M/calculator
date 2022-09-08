@@ -5,7 +5,8 @@ let context = {
 
 function setCurrentOperation(operator){
 	if(context.operator != null){
-		resultContainer.textContent = operate(operator, context.storedNb, +resultContainer.textContent);
+		const result = operate(context.operator, context.storedNb, +resultContainer.textContent);
+		resultContainer.textContent = result;
 	}
 	context.operator = operator;
 	context.storedNb = +resultContainer.textContent;
