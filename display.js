@@ -12,6 +12,7 @@ export function displayIntermediate(result){
 
 const numbers = document.querySelectorAll('.number');
 numbers.forEach(number => {
+	// Make the number clickable and display their value
 	number.addEventListener('click', function(){
 		AddDigitToDisplay(this.textContent);
 	});

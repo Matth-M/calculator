@@ -17,7 +17,6 @@ function divide(a,b){
 }
 
 export function operate(operator, a, b){
-	console.log((operator));
 	switch(operator){
 		case 'add':
 			return add(a,b);

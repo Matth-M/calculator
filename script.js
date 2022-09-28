@@ -23,12 +23,13 @@ function setCurrentOperation(operator){
 	} else {
 		// Previous operation pending
 		// Make the operation and store the result
-		const result = operate(context.operator, context.storedNb, +display.resultContainer.textContent);
-		displayResult(result);
+		const result = operate(context.operator, context.storedNb, +resultContainerContent());
 		context.storedNb = result;
 		// Store the operation the user wants to make
-		console.log(operator);
 		context.operator = operator;
+		//Display the state of the operation
+		displayIntermediate(context.storedNb);
+		clearResultContainer();
 	}
 }
 
@@ -56,7 +57,6 @@ equalBtn.addEventListener('click', function(){
 	// Make the pending operation
 	const result = operate(context.operator, context.storedNb, +resultContainerContent());
 	// Display the result
-	console.log(result);
 	displayResult(result);
 	resetContext(context);
 });
