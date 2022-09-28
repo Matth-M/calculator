@@ -21,8 +21,13 @@ numbers.forEach(number => {
 function AddDigitToDisplay(digit){
 		resultContainer.textContent += digit;
 }
+
 export function clearResultContainer(){
 	displayResult(0);
+}
+
+export function clearIntermediateContainer(){
+	displayIntermediate(0);
 }
 
 export function resetContext(context){
@@ -32,6 +37,7 @@ export function resetContext(context){
 
 export function reset(){
 	clearResultContainer();
+	clearIntermediateContainer();
 	resetContext(context);
 }
 
