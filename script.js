@@ -1,16 +1,35 @@
-let context = {
+import {
+	displayResult,
+	resultContainerContent,
+	resetContext,
+	displayIntermediate,
+	clearResultContainer
+} from './display.js';
+
+import {operate} from './compute.js';
+
+export let context = {
 	operator: null,
 	storedNb: 0,
 }
 
 function setCurrentOperation(operator){
-	if(context.operator != null){
-		const result = operate(context.operator, context.storedNb, +resultContainer.textContent);
-		resultContainer.textContent = result;
+	if(context.operator === null){
+		// First operation
+		context.operator = operator;
+		context.storedNb = +resultContainerContent();
+		displayIntermediate(context.storedNb);
+		clearResultContainer();
+	} else {
+		// Previous operation pending
+		// Make the operation and store the result
+		const result = operate(context.operator, context.storedNb, +display.resultContainer.textContent);
+		displayResult(result);
+		context.storedNb = result;
+		// Store the operation the user wants to make
+		console.log(operator);
+		context.operator = operator;
 	}
-	context.operator = operator;
-	context.storedNb = +resultContainer.textContent;
-	clearResultContainer();
 }
 
 function addClickHandler(element, operator) {
@@ -31,8 +50,10 @@ addClickHandler(divBtn, divide);
 
 const equalBtn = document.getElementById('equal');
 equalBtn.addEventListener('click', function(){
-	const result = operate(context.operator, context.storedNb, +resultContainer.textContent);
-	resultContainer.textContent = result;
-	context.operator = null;
-	context.storedNb = 0;
+	// Make the pending operation
+	const result = operate(context.operator, context.storedNb, +resultContainerContent());
+	// Display the result
+	console.log(result);
+	displayResult(result);
+	resetContext(context);
 });
