@@ -33,9 +33,11 @@ function setCurrentOperation(operator){
 }
 
 function addClickHandler(element, operator) {
+	// Add a clik handler for operand
+	// Pass the operator name to the function
     element.addEventListener('click', function() {
 		setCurrentOperation(operator);
-    }, false);
+    });
 }
 
 const addBtn = document.getElementById('add');
@@ -43,12 +45,13 @@ const subBtn = document.getElementById('substract');
 const mulBtn = document.getElementById('multiply');
 const divBtn = document.getElementById('divide');
 
-addClickHandler(addBtn, add);
-addClickHandler(subBtn , substract);
-addClickHandler(mulBtn, multiply);
-addClickHandler(divBtn, divide);
+addClickHandler(addBtn, 'add');
+addClickHandler(subBtn , 'substract');
+addClickHandler(mulBtn, 'multiply');
+addClickHandler(divBtn, 'divide');
 
 const equalBtn = document.getElementById('equal');
+
 equalBtn.addEventListener('click', function(){
 	// Make the pending operation
 	const result = operate(context.operator, context.storedNb, +resultContainerContent());

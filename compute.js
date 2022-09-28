@@ -14,6 +14,18 @@ function divide(a,b){
 	return a / b;
 }
 
-function operate(operator, a, b){
-	return operator(a,b);
+export function operate(operator, a, b){
+	console.log((operator));
+	switch(operator){
+		case 'add':
+			return add(a,b);
+		case 'substract':
+			return substract(a,b);
+		case 'multiply':
+			return multiply(a,b);
+		case 'divide':
+			return divide(a,b);
+		default:
+			break;
+	}
 }
