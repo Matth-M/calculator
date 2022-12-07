@@ -1,3 +1,4 @@
+$equal-key-bg-color: hsl(6, 63%, 50%);
 :root {
 	// backgrounds
 	  --main-bg-color: hsl(222, 26%, 31%);
@@ -92,6 +93,10 @@ main {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
+	&:hover {
+		background-color: scale-color($key-bg-color, $lightness: -10%);
+	}
 }
 
 #clear {
@@ -103,6 +108,10 @@ main {
 	background-color: var(--equal-key-bg-color);
 	box-shadow: var(--key-box-shadow-shape) var(--equal-key-shadow-color);
 	color: var(--key-bg-color);
+
+	&:hover {
+		background-color: scale-color($equal-key-bg-color, $lightness: 10%);
+	}
 }
 
 #del,
@@ -111,4 +120,8 @@ main {
 	color: var(--key-bg-color);
 	background-color: hsl(225, 21%, 49%);
 	box-shadow: var(--key-box-shadow-shape) hsl(224, 28%, 35%);
+
+	&:hover {
+		background-color: scale-color(hsl(225, 21%, 49%), $lightness: 10%);
+	}
 }
