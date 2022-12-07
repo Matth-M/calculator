@@ -30,19 +30,29 @@ main {
 	align-items: center;
 	gap: 30px;
 	font-size: var(--font-size);
+	width: 50%;
 }
 
-.screen {
+#screen {
 	background-color: var(--screen-bg-color);
 	border-radius: 5px;
-	width: 100%;
 	color: var(--sceen-text-color);
 	font-weight: var(--font-weight);
-	padding: 50px;
+	padding: 0 50px;
 
 	p {
 		text-align: right;
 	}
+}
+
+#screen,
+#keypad {
+	width: clamp(400px, 100%, 600px);
+}
+
+#intermediate {
+	color: gray;
+	font-size: 30px;
 }
 
 #result {
