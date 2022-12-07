@@ -1,22 +1,20 @@
 $equal-key-bg-color: hsl(6, 63%, 50%);
-:root {
-	// backgrounds
-	  --main-bg-color: hsl(222, 26%, 31%);
-	  --keypad-bg-color: hsl(223, 31%, 20%);
-	  --screen-bg-color: hsl(224, 36%, 15%);
-	  //font
-	  --sceen-text-color: hsl(0, 0%, 100%);
-	  --font-weight: 700;
-	  --font-size: 40px;
-	  // key backgroduns
-	  --key-bg-color: hsl(30, 25%, 89%);
-	  --key-shadow-color: hsl(28, 16%, 65%);
-	  // Equal key
-	  --equal-key-bg-color: hsl(6, 63%, 50%);
-	  --equal-key-shadow-color: hsl(6, 70%, 34%);
+// backgrounds
+$main-bg-color: hsl(222, 26%, 31%);
+$keypad-bg-color: hsl(223, 31%, 20%);
+$screen-bg-color: hsl(224, 36%, 15%);
+//font
+$sceen-text-color: hsl(0, 0%, 100%);
+$font-weight: 700;
+$font-size: 40px;
+// key backgroduns
+$key-bg-color: hsl(30, 25%, 89%);
+$key-shadow-color: hsl(28, 16%, 65%);
+// Equal key
+$equal-key-bg-color: hsl(6, 63%, 50%);
+$equal-key-shadow-color: hsl(6, 70%, 34%);
 
-	  --key-box-shadow-shape: 0 5px; // offset-x | offset-y
-}
+$key-box-shadow-shape: 0 5px; // offset-x | offset-y
 
 * {
 	margin: 0;
@@ -29,7 +27,7 @@ body {
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
-	background-color: var(--main-bg-color);
+	background-color: $main-bg-color;
 }
 
 main {
@@ -39,15 +37,15 @@ main {
 	justify-content: center;
 	align-items: center;
 	gap: 30px;
-	font-size: var(--font-size);
+	font-size: $font-size;
 	width: 50%;
 }
 
 #screen {
-	background-color: var(--screen-bg-color);
+	background-color: $screen-bg-color;
 	border-radius: 10px;
-	color: var(--sceen-text-color);
-	font-weight: var(--font-weight);
+	color: $sceen-text-color;
+	font-weight: $font-weight;
 	padding: 0 50px;
 
 	p {
@@ -74,7 +72,7 @@ main {
 	display: grid;
 	grid-template-columns: repeat(4, minmax(0, 1fr));
 	gap: 25px;
-	background-color: var(--keypad-bg-color);
+	background-color: $keypad-bg-color;
 	border-radius: 10px;
 	padding: 40px;
 }
@@ -83,13 +81,13 @@ main {
 	background-color: white;
 	border-radius: 10px;
 	height: 80%;
-	background-color: var(--key-bg-color);
-	font-weight: var(--font-weight);
-	color: var(--keypad-bg-color);
+	background-color: $key-bg-color;
+	font-weight: $font-weight;
+	color: $keypad-bg-color;
 	padding: 10px 0;
 	text-align: center;
 	vertical-align: text-top;
-	box-shadow: var(--key-box-shadow-shape) var(--key-shadow-color);
+	box-shadow: $key-box-shadow-shape $key-shadow-color;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -105,9 +103,9 @@ main {
 
 #equal {
 	grid-column: span 2;
-	background-color: var(--equal-key-bg-color);
-	box-shadow: var(--key-box-shadow-shape) var(--equal-key-shadow-color);
-	color: var(--key-bg-color);
+	background-color: $equal-key-bg-color;
+	box-shadow: $key-box-shadow-shape $equal-key-shadow-color;
+	color: $key-bg-color;
 
 	&:hover {
 		background-color: scale-color($equal-key-bg-color, $lightness: 10%);
@@ -116,10 +114,10 @@ main {
 
 #del,
 #clear {
-	font-size: calc(var(--font-size) - 30%);
-	color: var(--key-bg-color);
+	font-size: calc($font-size - 30%);
+	color: $key-bg-color;
 	background-color: hsl(225, 21%, 49%);
-	box-shadow: var(--key-box-shadow-shape) hsl(224, 28%, 35%);
+	box-shadow: $key-box-shadow-shape hsl(224, 28%, 35%);
 
 	&:hover {
 		background-color: scale-color(hsl(225, 21%, 49%), $lightness: 10%);
