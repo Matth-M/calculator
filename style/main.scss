@@ -11,6 +11,7 @@
 * {
 	margin: 0;
 	padding: 0;
+	box-sizing: border-box;
 }
 
 body {
@@ -19,7 +20,6 @@ body {
 	align-items: center;
 	height: 100vh;
 	background-color: var(--main-bg-color);
-
 }
 
 main {
@@ -38,6 +38,11 @@ main {
 	width: 100%;
 	color: var(--sceen-text-color);
 	font-weight: var(--font-weight);
+	padding: 50px;
+
+	p {
+		text-align: right;
+	}
 }
 
 #result {
@@ -45,10 +50,10 @@ main {
 	width: 100%;
 }
 
-#keys {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
+#keypad {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(5, minmax(20%, 100px));
 	align-items: center;
 	column-gap: 10px;
 	background-color: var(--keypad-bg-color);
@@ -63,39 +68,13 @@ main {
 	font-weight: var(--font-weight);
 	color: var(--keypad-bg-color);
 	padding: 10px ;
-}
-
-ul#operands,
-ul#numbers {
-	list-style: none;
-	padding: 0;
-	margin: 0;
-}
-
-.operand,
-.number {
-	// border: 2px solid black;
 	text-align: center;
 }
 
-#numbers {
-	display: flex;
-	flex-wrap: wrap;
-	width: 200px;
-
+#clear {
+	grid-area: "clear";
 }
 
-#numbers,
-#operands {
-	gap: 4px;
-}
-
-.number {
-	width: 60px;
-}
-
-#operands {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
+#equal {
+	grid-area: "equal";
 }
