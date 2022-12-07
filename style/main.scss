@@ -1,11 +1,20 @@
 :root {
+	// backgrounds
 	  --main-bg-color: hsl(222, 26%, 31%);
 	  --keypad-bg-color: hsl(223, 31%, 20%);
 	  --screen-bg-color: hsl(224, 36%, 15%);
+	  //font
 	  --sceen-text-color: hsl(0, 0%, 100%);
 	  --font-weight: 700;
 	  --font-size: 40px;
-	  --key-bg-color: #eae3db;
+	  // key backgroduns
+	  --key-bg-color: hsl(30, 25%, 89%);
+	  --key-shadow-color: hsl(28, 16%, 65%);
+	  // Equal key
+	  --equal-key-bg-color: hsl(6, 63%, 50%);
+	  --equal-key-shadow-color: hsl(6, 70%, 34%);
+
+	  --key-box-shadow-shape: 0 5px; // offset-x | offset-y
 }
 
 * {
@@ -63,7 +72,7 @@ main {
 #keypad {
 	display: grid;
 	grid-template-columns: repeat(4, minmax(0, 1fr));
-	gap: 30px;
+	gap: 25px;
 	background-color: var(--keypad-bg-color);
 	border-radius: 10px;
 	padding: 40px;
@@ -71,12 +80,18 @@ main {
 
 .key {
 	background-color: white;
-	border-radius: 5px;
+	border-radius: 10px;
+	height: 80%;
 	background-color: var(--key-bg-color);
 	font-weight: var(--font-weight);
 	color: var(--keypad-bg-color);
 	padding: 10px 0;
 	text-align: center;
+	vertical-align: text-top;
+	box-shadow: var(--key-box-shadow-shape) var(--key-shadow-color);
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 #clear {
@@ -85,4 +100,15 @@ main {
 
 #equal {
 	grid-column: span 2;
+	background-color: var(--equal-key-bg-color);
+	box-shadow: var(--key-box-shadow-shape) var(--equal-key-shadow-color);
+	color: var(--key-bg-color);
+}
+
+#del,
+#clear {
+	font-size: calc(var(--font-size) - 30%);
+	color: var(--key-bg-color);
+	background-color: hsl(225, 21%, 49%);
+	box-shadow: var(--key-box-shadow-shape) hsl(224, 28%, 35%);
 }
