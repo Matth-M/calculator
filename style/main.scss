@@ -1,0 +1,101 @@
+:root {
+	  --main-bg-color: hsl(222, 26%, 31%);
+	  --keypad-bg-color: hsl(223, 31%, 20%);
+	  --screen-bg-color: hsl(224, 36%, 15%);
+	  --sceen-text-color: hsl(0, 0%, 100%);
+	  --font-weight: 700;
+	  --font-size: 50px;
+	  --key-bg-color: #eae3db;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background-color: var(--main-bg-color);
+
+}
+
+main {
+	padding: 50px 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 30px;
+	font-size: var(--font-size);
+}
+
+.screen {
+	background-color: var(--screen-bg-color);
+	border-radius: 5px;
+	width: 100%;
+	color: var(--sceen-text-color);
+	font-weight: var(--font-weight);
+}
+
+#result {
+	box-sizing: border-box;
+	width: 100%;
+}
+
+#keys {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	column-gap: 10px;
+	background-color: var(--keypad-bg-color);
+	border-radius: 5px;
+	padding: 20px;
+}
+
+.key {
+	background-color: white;
+	border-radius: 5px;
+	background-color: var(--key-bg-color);
+	font-weight: var(--font-weight);
+	color: var(--keypad-bg-color);
+	padding: 10px ;
+}
+
+ul#operands,
+ul#numbers {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.operand,
+.number {
+	// border: 2px solid black;
+	text-align: center;
+}
+
+#numbers {
+	display: flex;
+	flex-wrap: wrap;
+	width: 200px;
+
+}
+
+#numbers,
+#operands {
+	gap: 4px;
+}
+
+.number {
+	width: 60px;
+}
+
+#operands {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
