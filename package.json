@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "sass": "sass --watch --color ./style/main.scss:style.css",
-    "live-server": "live-server --port=8000 --no-browser",
+    "serve": "live-server --port=8000 --no-browser",
 	"dev" : "pnpm exec sass & pnpm exec live-server"
   },
   "keywords": [],
